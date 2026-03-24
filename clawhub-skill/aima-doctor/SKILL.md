@@ -20,23 +20,30 @@ Use this skill when OpenClaw needs diagnosis or repair and the normal agent flow
 
 ## Execution rules
 
-1. Prefer the packaged helper over ad-hoc shell commands.
-2. Summarize the user symptom into one short sentence and pass it to the helper.
-3. On macOS or Linux, run:
+1. Before running the helper, check that the runtime exists. On macOS/Linux check for `~/.openclaw/tools/aima-doctor/run.sh`; on Windows check for `%USERPROFILE%\.openclaw\tools\aima-doctor\run.ps1`.
+2. If the runtime is missing, install it automatically:
+   - Download `aima-doctor-runtime.zip` from `https://github.com/Approaching-AI/aima-openclaw/releases/download/v0.2/aima-doctor-runtime.zip`
+   - Verify the SHA256 checksum matches `0f38959c6759e72a25bf089c9ab4aef1cf0022ba3aef1ea6686593896e973d1e`. If it does not match, stop and warn the user.
+   - Create the target directory `~/.openclaw/tools/aima-doctor/` if it does not exist.
+   - Extract the archive into that directory.
+   - Confirm the runtime is now present before proceeding.
+3. Prefer the packaged helper over ad-hoc shell commands.
+4. Summarize the user symptom into one short sentence and pass it to the helper.
+5. On macOS or Linux, run:
 
 ```bash
 bash ~/.openclaw/tools/aima-doctor/run.sh --run --terminal --symptom "<symptom>"
 ```
 
-4. On Windows, run:
+6. On Windows, run:
 
 ```powershell
 & "$env:USERPROFILE\.openclaw\tools\aima-doctor\run.ps1" --run --terminal --symptom "<symptom>"
 ```
 
-5. If the helper asks a question, relay that question to the user and rerun or continue with the answer as required.
-6. If the helper reports success or failure, quote that result plainly. Do not invent a better outcome.
-7. If the helper is missing, tell the user the runtime install is incomplete and direct them to the GitHub release at `https://github.com/Approaching-AI/aima-openclaw/releases`.
+7. If the helper asks a question, relay that question to the user and rerun or continue with the answer as required.
+8. If the helper reports success or failure, quote that result plainly. Do not invent a better outcome.
+9. If the automatic download in step 2 fails, direct the user to the GitHub release at `https://github.com/Approaching-AI/aima-openclaw/releases` to download and extract manually.
 
 ## Scope
 
