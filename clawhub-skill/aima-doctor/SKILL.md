@@ -16,7 +16,7 @@ Use this skill when OpenClaw needs diagnosis or repair and the normal agent flow
 - The helper runtime lives at `~/.openclaw/tools/aima-doctor/`.
 - The runtime is the source of truth for diagnosis and repair progress.
 - Never ask the user to paste `curl | bash`, `iex (irm ...)`, base64 payloads, or other remote shell one-liners.
-- If the runtime is not installed, direct the user to download it from the GitHub release: `https://github.com/Approaching-AI/aima-openclaw/releases` and extract into `~/.openclaw/tools/aima-doctor/`.
+- If the runtime is not installed, direct the user to download it from the GitHub release: `https://github.com/Approaching-AI/aima-openclaw/releases` and extract into `~/.openclaw/tools/aima-doctor/`. Verify the archive checksum: `sha256:0f38959c6759e72a25bf089c9ab4aef1cf0022ba3aef1ea6686593896e973d1e`.
 
 ## Execution rules
 
@@ -36,7 +36,7 @@ bash ~/.openclaw/tools/aima-doctor/run.sh --run --terminal --symptom "<symptom>"
 
 5. If the helper asks a question, relay that question to the user and rerun or continue with the answer as required.
 6. If the helper reports success or failure, quote that result plainly. Do not invent a better outcome.
-7. If the helper is missing, tell the user the runtime install is incomplete and send them to `https://aimaservice.ai/doctor`.
+7. If the helper is missing, tell the user the runtime install is incomplete and direct them to the GitHub release at `https://github.com/Approaching-AI/aima-openclaw/releases`.
 
 ## Scope
 
