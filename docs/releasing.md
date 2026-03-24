@@ -14,7 +14,7 @@ Edit `VERSION` when the packaged AIMA Doctor bundle changes.
 Current value:
 
 ```text
-1.2.1
+0.2
 ```
 
 The `VERSION` file controls:
@@ -47,7 +47,7 @@ git push origin main
 
 ## 4. Create a Git tag
 
-Repo tags mark public milestones and do not have to match the bundle version.
+Repo tags should match the bundle version.
 
 Example:
 
@@ -72,7 +72,7 @@ gh release create v0.1 \
 Recommended release note template (copy-paste and fill in):
 
 ```markdown
-## AIMA Doctor v0.1 (bundle 1.2.1)
+## AIMA Doctor v0.2
 
 ### Install
 
@@ -108,7 +108,7 @@ openclaw plugins enable aima-doctor
 After downloading, publish the skill to ClawHub with:
 \`\`\`bash
 unzip aima-doctor-skill.zip -d clawhub-skill
-clawhub publish ./clawhub-skill/aima-doctor --slug aima-doctor --name "AIMA Doctor" --version 1.2.1
+clawhub publish ./clawhub-skill/aima-doctor --slug aima-doctor --name "AIMA Doctor" --version 0.2
 \`\`\`
 ```
 

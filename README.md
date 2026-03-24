@@ -62,18 +62,15 @@ Outputs under `dist/<version>/`:
 ## Publish to ClawHub
 
 ```bash
-cd dist/1.2.1/clawhub-skill
-clawhub publish ./aima-doctor --slug aima-doctor --name "AIMA Doctor" --version 1.2.1
+cd dist/0.2/clawhub-skill
+clawhub publish ./aima-doctor --slug aima-doctor --name "AIMA Doctor" --version 0.2
 ```
 
 For the full release checklist, see [docs/releasing.md](docs/releasing.md).
 
 ## Versioning
 
-This repo tracks two version surfaces:
-
-- **Git tags** (e.g., `v0.1`): public repo milestones
-- **Bundle version** in `VERSION` (e.g., `1.2.1`): the packaged AIMA Doctor version used by the plugin, runtime, and ClawHub skill
+Git tags and bundle versions are unified. The `VERSION` file (currently `0.2`) controls `dist/` paths, manifests, and ClawHub publish version. Git tags use the `v` prefix (e.g., `v0.2`).
 
 ## Compatibility
 

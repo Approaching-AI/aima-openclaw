@@ -1,4 +1,4 @@
-# AIMA Doctor Release 1.2.1
+# AIMA Doctor Release 0.2
 
 ## Artifacts
 
@@ -18,7 +18,7 @@ openclaw plugins enable aima-doctor
 ## ClawHub publish
 
 ```bash
-cd clawhub-skill && clawhub publish ./aima-doctor --slug aima-doctor --name "AIMA Doctor" --version 1.2.1
+cd clawhub-skill && clawhub publish ./aima-doctor --slug aima-doctor --name "AIMA Doctor" --version 0.2
 ```
 
 ## Notes
