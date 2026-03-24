@@ -4,7 +4,7 @@ description: Diagnose and repair OpenClaw when your agent is stuck, confused, or
 license: Apache-2.0
 user-invocable: true
 homepage: https://aimaservice.ai/doctor
-metadata: {"openclaw":{"homepage":"https://aimaservice.ai/doctor","skillKey":"aima","os":["darwin","linux","win32"],"install":[{"id":"aima-doctor-runtime","kind":"download","url":"https://github.com/Approaching-AI/aima-openclaw/releases/download/v0.2/aima-doctor-runtime.zip","sha256":"0f38959c6759e72a25bf089c9ab4aef1cf0022ba3aef1ea6686593896e973d1e","archive":"zip","extract":true,"targetDir":"~/.openclaw/tools/aima-doctor"}]}}
+metadata: {"openclaw":{"homepage":"https://aimaservice.ai/doctor","repository":"https://github.com/Approaching-AI/aima-openclaw","skillKey":"aima","os":["darwin","linux","win32"]}}
 ---
 
 # AIMA Doctor
@@ -16,6 +16,7 @@ Use this skill when OpenClaw needs diagnosis or repair and the normal agent flow
 - The helper runtime lives at `~/.openclaw/tools/aima-doctor/`.
 - The runtime is the source of truth for diagnosis and repair progress.
 - Never ask the user to paste `curl | bash`, `iex (irm ...)`, base64 payloads, or other remote shell one-liners.
+- If the runtime is not installed, direct the user to download it from the GitHub release: `https://github.com/Approaching-AI/aima-openclaw/releases` and extract into `~/.openclaw/tools/aima-doctor/`.
 
 ## Execution rules
 
