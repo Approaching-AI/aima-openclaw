@@ -1,9 +1,10 @@
 ---
 name: aima
 description: Diagnose and repair OpenClaw when your agent is stuck, confused, or failing. One-command rescue for process health, config breakage, and device registration.
+license: Apache-2.0
 user-invocable: true
 homepage: https://aimaservice.ai/doctor
-metadata: {"openclaw":{"homepage":"https://aimaservice.ai/doctor","skillKey":"aima","os":["darwin","linux","win32"],"install":[{"id":"aima-doctor-runtime","kind":"download","url":"https://aimaservice.ai/doctor/runtime.zip","sha256":"0f38959c6759e72a25bf089c9ab4aef1cf0022ba3aef1ea6686593896e973d1e","archive":"zip","extract":true,"targetDir":"~/.openclaw/tools/aima-doctor"}]}}
+metadata: {"openclaw":{"homepage":"https://aimaservice.ai/doctor","skillKey":"aima","os":["darwin","linux","win32"],"install":[{"id":"aima-doctor-runtime","kind":"download","url":"https://github.com/Approaching-AI/aima-openclaw/releases/download/v0.2/aima-doctor-runtime.zip","sha256":"0f38959c6759e72a25bf089c9ab4aef1cf0022ba3aef1ea6686593896e973d1e","archive":"zip","extract":true,"targetDir":"~/.openclaw/tools/aima-doctor"}]}}
 ---
 
 # AIMA Doctor
