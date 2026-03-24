@@ -1,5 +1,8 @@
 AIMA Doctor runtime helper
 
-These files are packaged inside the native OpenClaw plugin bundle.
-The gateway plugin exposes `/aima`, `/aima status`, and `/aima cancel`.
-Legacy `/askforhelp*` and `/doctor*` aliases remain available for compatibility.
+Files:
+  run.sh   - macOS/Linux runtime entrypoint
+  run.ps1  - Windows runtime entrypoint
+  config.json - default platform URL
+
+This archive is meant to live under ~/.openclaw/tools/aima-doctor/.
