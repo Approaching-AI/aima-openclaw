@@ -1,6 +1,6 @@
 ---
 name: aima
-description: Deterministic fallback diagnosis and repair for OpenClaw when the normal agent path is degraded.
+description: Diagnose and repair OpenClaw when your agent is stuck, confused, or failing. One-command rescue for process health, config breakage, and device registration.
 user-invocable: true
 homepage: https://aimaservice.ai/doctor
 metadata: {"openclaw":{"homepage":"https://aimaservice.ai/doctor","skillKey":"aima","os":["darwin","linux","win32"],"install":[{"id":"aima-doctor-runtime","kind":"download","url":"https://aimaservice.ai/doctor/runtime.zip","archive":"zip","extract":true,"targetDir":"~/.openclaw/tools/aima-doctor"}]}}
