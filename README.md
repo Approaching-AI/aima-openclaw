@@ -1,29 +1,49 @@
-# aima-openclaw
+# AIMA Doctor for OpenClaw
 
-Standalone OpenClaw distribution repo for AIMA Doctor.
+**One-command diagnosis and repair when your OpenClaw agent is stuck.**
 
-This repository contains the OpenClaw-facing parts of AIMA Doctor only:
+AIMA Doctor is an OpenClaw plugin that gives you a deterministic rescue path — diagnose process health, fix config breakage, recover device registration, and run guided repairs driven by the AIMA platform.
 
-- `plugin-package/aima-doctor/`: native OpenClaw plugin source
-- `clawhub-skill/aima-doctor/`: ClawHub-publishable compatibility skill
-- `runtime/`: standalone helper runtime for manual/runtime-only installs
-- `scripts/build-release.sh`: reproducible release packager
-- `dist/<version>/`: generated release artifacts
+## Install
 
-The AIMA platform backend, `/doctor/*.zip` distribution endpoints, invite-code
-policy, and end-to-end platform tests remain in the main
-`Approaching-AI/aima-service-new` repository. This repo is the public
-OpenClaw-facing package source.
+**From ClawHub** (recommended):
 
-## Supported flow
+```bash
+clawhub install aima-doctor
+```
 
-`/aima` is a deterministic rescue entrypoint for OpenClaw when the normal agent path is degraded but the gateway is still alive and able to receive messages.
+**From a release zip**:
 
-Supported user commands:
+```bash
+openclaw plugins install ./aima-doctor-plugin.zip
+openclaw plugins enable aima-doctor
+```
 
-- `/aima <symptom>`
-- `/aima status`
-- `/aima cancel`
+## Usage
+
+In any OpenClaw conversation:
+
+```
+/aima my agent keeps failing to install the package
+/aima status
+/aima cancel
+```
+
+When AIMA Doctor asks a follow-up question, reply with `/aima <your answer>`.
+
+## What's in this repo
+
+This repository contains the OpenClaw-facing distribution of AIMA Doctor:
+
+| Directory | Purpose |
+|-----------|---------|
+| `plugin-package/aima-doctor/` | Native OpenClaw plugin source (primary artifact) |
+| `clawhub-skill/aima-doctor/` | ClawHub-publishable skill bundle |
+| `runtime/` | Standalone helper runtime for manual installs |
+| `scripts/build-release.sh` | Reproducible release packager |
+| `dist/<version>/` | Generated release artifacts |
+
+The AIMA platform backend, distribution endpoints, and end-to-end platform tests live in the main [aima-service-new](https://github.com/Approaching-AI/aima-service-new) repository.
 
 ## Build a release
 
@@ -31,31 +51,13 @@ Supported user commands:
 bash scripts/build-release.sh
 ```
 
-That command generates:
+Outputs under `dist/<version>/`:
 
-- `dist/1.2.1/aima-doctor-plugin.zip`
-- `dist/1.2.1/aima-doctor-runtime.zip`
-- `dist/1.2.1/aima-doctor-skill.zip`
-- `dist/1.2.1/PUBLISH.md`
-- `dist/1.2.1/SHA256SUMS.txt`
-
-## Versioning
-
-This repo intentionally tracks two version surfaces:
-
-- Git tags such as `v0.1`: public repo milestones
-- Bundle version in `VERSION` such as `1.2.1`: the packaged AIMA Doctor bundle
-  version used by the plugin, runtime, and ClawHub skill
-
-That means the GitHub release can be `v0.1` while the shipped OpenClaw package
-version is still `1.2.1`.
-
-## Install the native plugin
-
-```bash
-openclaw plugins install ./dist/1.2.1/aima-doctor-plugin.zip
-openclaw plugins enable aima-doctor
-```
+- `aima-doctor-plugin.zip` — primary install artifact
+- `aima-doctor-runtime.zip` — standalone helper runtime
+- `aima-doctor-skill.zip` — ClawHub compatibility skill
+- `SHA256SUMS.txt` — integrity checksums
+- `PUBLISH.md` — release notes
 
 ## Publish to ClawHub
 
@@ -64,13 +66,21 @@ cd dist/1.2.1/clawhub-skill
 clawhub publish ./aima-doctor --slug aima-doctor --name "AIMA Doctor" --version 1.2.1
 ```
 
-For a full release checklist, see `docs/releasing.md`.
+For the full release checklist, see [docs/releasing.md](docs/releasing.md).
 
-## Runtime defaults
+## Versioning
 
-- Homepage: `https://aimaservice.ai/doctor`
-- Default platform API: `https://aimaservice.ai/platform/api/v1`
-- Native plugin target: OpenClaw `2026.3.22+`
+This repo tracks two version surfaces:
+
+- **Git tags** (e.g., `v0.1`): public repo milestones
+- **Bundle version** in `VERSION` (e.g., `1.2.1`): the packaged AIMA Doctor version used by the plugin, runtime, and ClawHub skill
+
+## Compatibility
+
+- **OS**: macOS, Linux, Windows
+- **OpenClaw**: 2026.3.22+
+- **Default platform API**: https://aimaservice.ai/platform/api/v1
+- **Homepage**: https://aimaservice.ai/doctor
 
 ## License
 

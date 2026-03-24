@@ -69,12 +69,48 @@ gh release create v0.1 \
   dist/<version>/PUBLISH.md
 ```
 
-Recommended release note shape:
+Recommended release note template (copy-paste and fill in):
 
-- public milestone tag, for example `v0.1`
-- packaged bundle version, for example `1.2.1`
-- attached plugin/runtime/skill bundle list
-- note that ClawHub publish should use the unpacked `dist/<version>/clawhub-skill/aima-doctor/`
+```markdown
+## AIMA Doctor v0.1 (bundle 1.2.1)
+
+### Install
+
+From ClawHub:
+\`\`\`bash
+clawhub install aima-doctor
+\`\`\`
+
+From this release:
+\`\`\`bash
+openclaw plugins install ./aima-doctor-plugin.zip
+openclaw plugins enable aima-doctor
+\`\`\`
+
+### What's new
+
+- (describe changes here)
+
+### Artifacts
+
+- `aima-doctor-plugin.zip` — native OpenClaw plugin (primary)
+- `aima-doctor-runtime.zip` — standalone helper runtime
+- `aima-doctor-skill.zip` — ClawHub compatibility skill
+- `SHA256SUMS.txt` — integrity checksums
+
+### Compatibility
+
+- OpenClaw 2026.3.22+
+- macOS, Linux, Windows
+
+### ClawHub publish
+
+After downloading, publish the skill to ClawHub with:
+\`\`\`bash
+unzip aima-doctor-skill.zip -d clawhub-skill
+clawhub publish ./clawhub-skill/aima-doctor --slug aima-doctor --name "AIMA Doctor" --version 1.2.1
+\`\`\`
+```
 
 ## 6. Publish to ClawHub
 
