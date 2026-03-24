@@ -3,7 +3,7 @@ name: aima
 description: Diagnose and repair OpenClaw when your agent is stuck, confused, or failing. One-command rescue for process health, config breakage, and device registration.
 user-invocable: true
 homepage: https://aimaservice.ai/doctor
-metadata: {"openclaw":{"homepage":"https://aimaservice.ai/doctor","skillKey":"aima","os":["darwin","linux","win32"],"install":[{"id":"aima-doctor-runtime","kind":"download","url":"https://aimaservice.ai/doctor/runtime.zip","archive":"zip","extract":true,"targetDir":"~/.openclaw/tools/aima-doctor"}]}}
+metadata: {"openclaw":{"homepage":"https://aimaservice.ai/doctor","skillKey":"aima","os":["darwin","linux","win32"],"install":[{"id":"aima-doctor-runtime","kind":"download","url":"https://aimaservice.ai/doctor/runtime.zip","sha256":"0f38959c6759e72a25bf089c9ab4aef1cf0022ba3aef1ea6686593896e973d1e","archive":"zip","extract":true,"targetDir":"~/.openclaw/tools/aima-doctor"}]}}
 ---
 
 # AIMA Doctor
@@ -29,7 +29,7 @@ bash ~/.openclaw/tools/aima-doctor/run.sh --run --terminal --symptom "<symptom>"
 4. On Windows, run:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\.openclaw\tools\aima-doctor\run.ps1" --run --terminal --symptom "<symptom>"
+& "$env:USERPROFILE\.openclaw\tools\aima-doctor\run.ps1" --run --terminal --symptom "<symptom>"
 ```
 
 5. If the helper asks a question, relay that question to the user and rerun or continue with the answer as required.
