@@ -1,0 +1,14 @@
+{
+  "id": "aima-doctor",
+  "name": "AIMA Doctor",
+  "description": "Gateway plugin for deterministic OpenClaw diagnosis and repair via AIMA.",
+  "version": "1.2.1",
+  "skills": [
+    "./skills"
+  ],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

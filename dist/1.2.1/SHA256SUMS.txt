@@ -1,0 +1,3 @@
+2536e2f2353a6f025b8553bf6b5d7eedcdb7d51a7e64efe99f77fff020dc7c4f  aima-doctor-plugin.zip
+c16a581b34f1f63c1f427f3cc42110a3b828d02951221437135f4a11d915d6f9  aima-doctor-runtime.zip
+8b5f63d1d1eee4467a5ca776bef4f284fa68d50f8056dfd1c42eac0b6c946ef3  aima-doctor-skill.zip
