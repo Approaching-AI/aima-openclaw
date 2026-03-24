@@ -7,6 +7,14 @@ produce and publish three bundles:
 - `aima-doctor-runtime.zip`
 - `aima-doctor-skill.zip`
 
+Before cutting a new release here, first sync the packaged payload from the
+main repo:
+
+```bash
+cd ../aima-service-new
+python3 scripts/sync_aima_openclaw_repo.py --target-repo ../aima-openclaw
+```
+
 ## 1. Update the bundle version
 
 Edit `VERSION` when the packaged AIMA Doctor bundle changes.

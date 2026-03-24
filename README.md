@@ -45,6 +45,11 @@ This repository contains the OpenClaw-facing distribution of AIMA Doctor:
 
 The AIMA platform backend, distribution endpoints, and end-to-end platform tests live in the main [aima-service-new](https://github.com/Approaching-AI/aima-service-new) repository.
 
+The packaged OpenClaw payload in this repo is synchronized from the main repo's
+doctor templates and packaging logic. See
+[`docs/releasing.md`](docs/releasing.md) for the release flow and the
+main-repo sync note.
+
 ## Build a release
 
 ```bash
